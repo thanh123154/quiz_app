@@ -13,10 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int index = 0;
 
-  PageController pageController = PageController(
-    initialPage: 0,
-    viewportFraction: 0.8,
-  );
+  // PageController pageController = PageController(
+  //   initialPage: 0,
+  //   viewportFraction: 0.8,
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,6 @@ class _HomePageState extends State<HomePage> {
         SizedBox(height: 10),
         articleCard(),
         SizedBox(height: 10),
-        articleCard(),
       ],
     );
   }
@@ -84,7 +83,7 @@ class _HomePageState extends State<HomePage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
-          child: articleContent()),
+          child: articleContent()), //noi dung recent post
     );
   }
 
@@ -92,6 +91,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: <Widget>[
         ListTile(
+          contentPadding: EdgeInsets.all(10),
           onTap: () {},
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -115,6 +115,8 @@ class _HomePageState extends State<HomePage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xffFFFFFF),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
                   ),
                 ),
               ),
@@ -167,7 +169,7 @@ class _HomePageState extends State<HomePage> {
       child: Align(
         alignment: Alignment.center,
         child: Text(
-          "Text here",
+          "Ung dung di dong",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.red,
@@ -203,7 +205,7 @@ TextSpan buildTextSpanBox() {
       fontSize: 20,
     ),
     children: [
-      TextSpan(text: "Toan roi rac"),
+      TextSpan(text: "Ung dung di dong"),
     ],
   );
 }
